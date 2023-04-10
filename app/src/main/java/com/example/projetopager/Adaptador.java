@@ -20,12 +20,14 @@ public class Adaptador extends FragmentStateAdapter{
                 return new FragmentoDois();
             case 2:
                 return new FragmentoTres();
+            case 3:
+                return new FragmentoQuatro();
         }
         return new FragmentoUm();
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 }

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
  */
 public class FragmentoUm extends Fragment {
 
+    Button botao;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -58,6 +61,15 @@ public class FragmentoUm extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento_um, container, false);
+        View v = inflater.inflate(R.layout.fragment_fragmento_um, container, false);
+        botao = v.findViewById(R.id.btn1);
+        botao.setOnClickListener(click ->{
+            clicar();
+        });
+        return v;
+    }
+
+    public void clicar(){
+        Toast.makeText(getContext(), "Deu certo!", Toast.LENGTH_SHORT).show();
     }
 }
